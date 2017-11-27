@@ -3,7 +3,10 @@ require 'active_support/inflector'
 
 class InteractiveRecord
 
-  def initialize
+  def initialize(hash={})
+    hash.each do |property, value|
+      self.send("#{property}=", value)
+    end
   end
 
 
