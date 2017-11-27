@@ -13,7 +13,6 @@ class InteractiveRecord
     self.to_s.downcase.pluralize
   end
 
-
   def self.column_names
     DB[:conn].results_as_hash = true
 
@@ -28,6 +27,9 @@ class InteractiveRecord
     column_names.compact
   end
 
+def table_name
+  self.class.table_name
+end
 
 
 
